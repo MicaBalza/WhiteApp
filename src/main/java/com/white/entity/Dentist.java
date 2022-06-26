@@ -17,8 +17,8 @@ public class Dentist extends User {
 
     private String license;
 
-    public Dentist(String email, String password, Timestamp creationDate, String license) {
-        super(email, password, creationDate);
+    public Dentist(String email, String password, String name, String lastname, Timestamp creationDate, String license) {
+        super(email, password, name, lastname, creationDate);
         this.license = license;
     }
 

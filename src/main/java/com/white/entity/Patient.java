@@ -18,8 +18,8 @@ public class Patient extends User {
     @JoinColumn(name = "addressId", referencedColumnName = "id")
     private Address address;
 
-    public Patient(String email, String password, Timestamp creationDate, String dni, Address address) {
-        super(email, password, creationDate);
+    public Patient(String email, String password, String name, String lastname, Timestamp creationDate, String dni, Address address) {
+        super(email, password, name, lastname, creationDate);
         this.dni = dni;
         this.address = address;
     }

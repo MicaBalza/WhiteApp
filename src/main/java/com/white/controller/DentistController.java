@@ -18,6 +18,12 @@ public class DentistController {
         this.dentistService = dentistService;
     }
 
+    @PostMapping("/new")
+    public ResponseEntity<Dentist> addDentist(@RequestBody Dentist dentist) {
+        dentistService.saveDentist(dentist);
+        return new ResponseEntity(dentist, HttpStatus.CREATED);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Dentist> getDentistById(@PathVariable("id") Integer id) {
         ResponseEntity response = null;
@@ -30,9 +36,5 @@ public class DentistController {
         return response;
     }
 
-    @PostMapping("/save")
-    public ResponseEntity<Dentist> addDentist(@RequestBody Dentist dentist) {
-        dentistService.saveDentist(dentist);
-        return new ResponseEntity(dentist, HttpStatus.CREATED);
-    }
+
 }

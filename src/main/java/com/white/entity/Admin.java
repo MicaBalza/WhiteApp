@@ -15,8 +15,8 @@ import java.sql.Timestamp;
 @DiscriminatorValue("Admin")
 public class Admin extends User {
 
-    public Admin(String email, String password, Timestamp creationDate) {
-        super(email, password, creationDate);
+    public Admin(String email, String password, String name, String lastname, Timestamp creationDate) {
+        super(email, password, name, lastname, creationDate);
     }
 
     public Admin() {

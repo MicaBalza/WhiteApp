@@ -19,11 +19,15 @@ public class User {
     private Integer id;
     private String email;
     private String password;
+    private String name;
+    private String lastname;
     private Timestamp creationDate;
 
-    public User(String email, String password, Timestamp creationDate) {
+    public User(String email, String password, String name, String lastname, Timestamp creationDate) {
         this.email = email;
         this.password = password;
+        this.name = name;
+        this.lastname = lastname;
         this.creationDate = creationDate;
     }
 

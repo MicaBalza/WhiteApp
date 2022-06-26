@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>White | Dental Clinic</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+    <script type="module" th:src="@{js/tailwind-config.js}"></script>
+    <script type="tailwind-config">
+      window.tailwindConfig
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-fill">
+    <header class="px-8 py-5 bg-main">
+      <div class="flex">
+        <div class="flex flex-1 justify-start mr-auto">
+          <img
+            th:src="@{img/white-logo-horizontal.svg}"
+            alt="White - Dental Clinic"
+          />
+        </div>
+        <div class="flex flex-1 justify-center">
+          <img
+            th:src="@{img/white-logo-illustration.svg}"
+            alt="White - Dental Clinic"
+          />
+        </div>
+        <div class="flex flex-1 justify-end ml-auto">
+          <button
+            class="font-semibold text-sm text-white tracking-widest focus:outline-none"
+          >
+            LOGIN
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="relative w-full h-[400px] mt-[120px] bg-white">
+        <div class="relative w-11/12 mx-auto">
+          <div class="absolute -top-20 grid grid-cols-3 gap-3 w-full">
+            <div class="h-[300px]">
+              <img
+                th:src="@{img/home-1.jpg}"
+                class="w-full max-h-full object-cover"
+              />
+            </div>
+            <div class="h-[300px]">
+              <img
+                th:src="@{img/home-2.jpg}"
+                class="w-full max-h-full object-cover"
+              />
+            </div>
+            <div class="h-[300px]">
+              <img
+                th:src="@{img/home-3.jpg}"
+                class="w-full max-h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="absolute -bottom-6 w-full text-center">
+          <p class="mb-10 text-4xl text-main font-semibold">Welcome !</p>
+          <a
+            class="px-10 py-4 font-semibold text-sm text-white tracking-widest bg-main rounded focus:outline-none"
+            th:href="@{/home}"
+          >
+            LOGIN
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="fixed bottom-4 flex justify-center w-full text-xs text-main tracking-widest"
+    >
+      WHITE | Dental Clinic - 2022
+    </footer>
+  </body>
+</html>
