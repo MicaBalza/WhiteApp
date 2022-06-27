@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/addresses")
 public class AddressController {
@@ -16,6 +18,11 @@ public class AddressController {
     @Autowired
     public AddressController(AddressService addressService) {
         this.addressService = addressService;
+    }
+
+    @GetMapping
+    public List<Address> getAllAddresses() {
+        return addressService.getAllAddresses();
     }
 
     @GetMapping("/{id}")
