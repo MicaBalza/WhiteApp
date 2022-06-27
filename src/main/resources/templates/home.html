@@ -9,7 +9,7 @@
     <script type="tailwind-config">
       window.tailwindConfig
     </script>
-    <script type="text/javascript" th:src="@{js/addDentist.js}"></script>
+    <script type="text/javascript" th:src="@{js/addPatient.js}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,29 +18,7 @@
     />
   </head>
   <body class="bg-fill">
-  <header class="px-8 py-5 bg-main">
-    <div class="flex">
-      <div class="flex flex-1 justify-start mr-auto">
-        <img
-                th:src="@{img/white-logo-horizontal.svg}"
-                alt="White - Dental Clinic"
-        />
-      </div>
-      <div class="flex flex-1 justify-center">
-        <img
-                th:src="@{img/white-logo-illustration.svg}"
-                alt="White - Dental Clinic"
-        />
-      </div>
-      <div class="flex flex-1 justify-end ml-auto">
-        <button
-                class="font-semibold text-sm text-white tracking-widest focus:outline-none"
-        >
-          LOGIN
-        </button>
-      </div>
-    </div>
-  </header>
+  <nav th:replace="~{fragments/navbar :: navbar}"></nav>
     <main class="px-9 py-8">
       <div class="flex gap-4">
         <div class="min-w-[420px] px-8 py-7 bg-white rounded">
@@ -58,36 +36,11 @@
         </div>
         <div class="min-w-[420px] px-8 py-7 bg-white rounded">
           <p>Add Patient</p>
+          <div th:replace="~{fragments/new-patient-form :: new-patient-form}"></div>
         </div>
         <div class="min-w-[420px] px-8 py-7 bg-white rounded">
           <p>Add Dentist</p>
-          <form id="new-dentist-form">
-            <div class="form-group">
-                <label class="control-label" for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre"
-                       placeholder="Ingrese el nombre"
-                       name="nombre" required/>
-            </div>
-            <div class="form-group">
-                <label class="control-label" for="apellido">Apellido:</label>
-                <input type="text" class="form-control" id="apellido"
-                       placeholder="Ingrese el apellido"
-                       name="apellido" required/>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label" for="matricula">Matricula:</label>
-                <input type="text" class="form-control" id="matricula"
-                       placeholder="Ingrese la matricula"
-                       name="matricula" required/>
-            </div>
-
-
-            <button type="submit" class="btn btn-danger"
-                    id="btn-add-new-odontologo">Guardar</button>
-        </form>
-        <div id="response" style="display:none; margin-top:10px">
-        </div>
+          </div>
       </div>
     </main>
     <footer

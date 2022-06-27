@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<form id="new-patient-form" th:fragment="new-patient-form">
+    <div class="flex flex-col">
+        <label class="text-xs" for="patient-name">Name:</label>
+        <input type="text" id="patient-name"
+               placeholder="Enter patient name"
+               name="patient-name" class="text-sm rounded" required/>
+    </div>
+    <div class="flex flex-col">
+        <label class="text-xs" for="patient-lastname">Last name:</label>
+        <input type="text" id="patient-lastname"
+               placeholder="Enter patient lastname"
+               name="patient-lastname" class="text-sm rounded" required/>
+    </div>
+    <div class="flex flex-col">
+        <label class="text-xs" for="patient-dni">DNI:</label>
+        <input type="text" id="patient-dni"
+               placeholder="Enter patient dni"
+               name="patient-dni" class="text-sm rounded" required/>
+    </div>
+    <p>Address</p>
+    <div class="flex flex-col">
+        <label class="text-xs" for="address-street">Street:</label>
+        <input type="text" id="address-street"
+               placeholder="Enter patient address street"
+               name="address-street" class="text-sm rounded" required/>
+    </div>
+    <div class="flex flex-col">
+        <label class="text-xs" for="address-number">Number:</label>
+        <input type="text" id="address-number"
+               placeholder="Enter patient address number"
+               name="address-number" class="text-sm rounded" required/>
+    </div>
+    <button type="submit"
+            id="new-patient-btn" class="px-10 py-4 font-semibold text-sm text-white tracking-widest bg-main rounded focus:outline-none">SAVE</button>
+</form>
+<div id="patient-response" style="display:none; margin-top:10px">
+</div>
+</html>

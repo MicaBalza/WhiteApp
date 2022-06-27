@@ -17,29 +17,7 @@
     />
   </head>
   <body class="bg-fill">
-    <header class="px-8 py-5 bg-main">
-      <div class="flex">
-        <div class="flex flex-1 justify-start mr-auto">
-          <img
-            th:src="@{img/white-logo-horizontal.svg}"
-            alt="White - Dental Clinic"
-          />
-        </div>
-        <div class="flex flex-1 justify-center">
-          <img
-            th:src="@{img/white-logo-illustration.svg}"
-            alt="White - Dental Clinic"
-          />
-        </div>
-        <div class="flex flex-1 justify-end ml-auto">
-          <button
-            class="font-semibold text-sm text-white tracking-widest focus:outline-none"
-          >
-            LOGIN
-          </button>
-        </div>
-      </div>
-    </header>
+  <nav th:replace="~{fragments/navbar :: navbar}"></nav>
     <main>
       <div class="relative w-full h-[400px] mt-[120px] bg-white">
         <div class="relative w-11/12 mx-auto">

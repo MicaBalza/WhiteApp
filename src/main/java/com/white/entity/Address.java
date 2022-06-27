@@ -18,6 +18,8 @@ public class Address {
     private String number;
     private String locality;
     private String province;
+    @OneToOne(mappedBy = "address")
+    private Patient patient;
 
     public Address(String street, String number, String locality, String province) {
         this.street = street;

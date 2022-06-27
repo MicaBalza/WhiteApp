@@ -30,7 +30,7 @@ public class PatientController {
         return response;
     }
 
-    @PostMapping("/save")
+    @PostMapping("/new")
     public ResponseEntity<Patient> addPatient(@RequestBody Patient patient) {
         patientService.savePatient(patient);
         return new ResponseEntity(patient, HttpStatus.CREATED);
