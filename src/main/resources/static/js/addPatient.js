@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
       }
     };
 
-    const url = '/patient/new';
+    const url = '/patients/new';
 
     const settings = {
       method: 'POST',
@@ -27,28 +27,26 @@ window.addEventListener('load', function () {
     fetch(url, settings)
       .then((response) => response.json())
       .then((data) => {
-        let successAlert ='<div>Patient added</div>';
+        let successAlert ='<div>Patient added !</div>';
 
         document.querySelector('#patient-response').innerHTML = successAlert;
         document.querySelector('#patient-response').style.display = 'block';
-          // resetUploadForm();
+        resetUploadForm();
       })
       .catch((error) => {
       console.log(error);
-        let errorAlert =
-          '<div class="alert alert-danger alert-dismissible">' +
-          '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-          '<strong> Error intente nuevamente</strong> </div>';
+        let errorAlert = '<div>Error, please try again</div>';
 
-        //document.querySelector('#patient-response').innerHTML = errorAlert;
-        //document.querySelector('#patient-response').style.display = 'block';
-        // resetUploadForm();
+        document.querySelector('#patient-response').innerHTML = errorAlert;
+        document.querySelector('#patient-response').style.display = 'block';
       });
   });
 
   function resetUploadForm() {
     document.querySelector('#patient-name').value = '';
     document.querySelector('#patient-lastname').value = '';
-    document.querySelector('#patient').value = '';
+    document.querySelector('#patient-dni').value = '';
+    document.querySelector('#address-street').value = '';
+    document.querySelector('#address-number').value = '';
   }
 });

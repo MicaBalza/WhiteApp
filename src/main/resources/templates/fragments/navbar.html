@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <header class="px-8 py-5 bg-main" th:fragment="navbar">
-    <div class="flex">
+    <div class="flex items-center">
         <div class="flex flex-1 justify-start mr-auto">
             <img
                     th:src="@{img/white-logo-horizontal.svg}"
@@ -15,11 +15,12 @@
             />
         </div>
         <div class="flex flex-1 justify-end ml-auto">
-            <button
-                    class="font-semibold text-sm text-white tracking-widest focus:outline-none"
+            <a
+                    class="font-semibold text-sm text-white tracking-widest"
+                    th:href="@{/home}"
             >
                 LOGIN
-            </button>
+            </a>
         </div>
     </div>
 </header>

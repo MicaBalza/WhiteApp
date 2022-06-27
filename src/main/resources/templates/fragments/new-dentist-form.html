@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<form id="new-dentist-form" th:fragment="new-dentist-form" class="flex flex-col gap-4">
+    <p>Add Dentist</p>
+    <div class="flex flex-col">
+        <label class="text-xs" for="dentist-name">Name:</label>
+        <input type="text" id="dentist-name"
+               placeholder="Enter dentist name"
+               name="dentist-name" class="text-sm rounded" required/>
+    </div>
+    <div class="flex flex-col">
+        <label class="text-xs" for="dentist-lastname">Last name:</label>
+        <input type="text" id="dentist-lastname"
+               placeholder="Enter dentist lastname"
+               name="dentist-lastname" class="text-sm rounded" required/>
+    </div>
+    <div class="flex flex-col">
+        <label class="text-xs" for="dentist-license">License:</label>
+        <input type="text" id="dentist-license"
+               placeholder="Enter dentist license"
+               name="dentist-license" class="text-sm rounded" required/>
+    </div>
+    <div class="flex items-center">
+        <button type="submit"
+                id="new-dentist-btn" class="mr-4 px-10 py-4 font-semibold text-sm text-white tracking-widest bg-main rounded focus:outline-none">SAVE</button>
+        <div id="dentist-response" style="display:none" class="text-main"></div>
+    </div>
+</form>
+</html>

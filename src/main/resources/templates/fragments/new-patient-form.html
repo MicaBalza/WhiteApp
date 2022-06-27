@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<form id="new-patient-form" th:fragment="new-patient-form">
+<form id="new-patient-form" th:fragment="new-patient-form" class="flex flex-col gap-4">
+    <p>Add Patient</p>
     <div class="flex flex-col">
         <label class="text-xs" for="patient-name">Name:</label>
         <input type="text" id="patient-name"
@@ -32,9 +33,10 @@
                placeholder="Enter patient address number"
                name="address-number" class="text-sm rounded" required/>
     </div>
-    <button type="submit"
-            id="new-patient-btn" class="px-10 py-4 font-semibold text-sm text-white tracking-widest bg-main rounded focus:outline-none">SAVE</button>
+    <div class="flex  items-center">
+        <button type="submit"
+                id="new-patient-btn" class="mr-4 px-10 py-4 font-semibold text-sm text-white tracking-widest bg-main rounded focus:outline-none">SAVE</button>
+        <div id="patient-response" style="display:none" class="text-main"></div>
+    </div>
 </form>
-<div id="patient-response" style="display:none; margin-top:10px">
-</div>
 </html>

@@ -10,6 +10,7 @@
       window.tailwindConfig
     </script>
     <script type="text/javascript" th:src="@{js/addPatient.js}"></script>
+    <script type="text/javascript" th:src="@{js/addDentist.js}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,10 +18,10 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-fill">
-  <nav th:replace="~{fragments/navbar :: navbar}"></nav>
-    <main class="px-9 py-8">
-      <div class="flex gap-4">
+  <body class="flex flex-col min-h-[100vh] bg-fill">
+    <nav th:replace="~{fragments/navbar :: navbar}"></nav>
+    <main class="flex-1 px-9 py-8">
+      <div class="flex flex-wrap gap-4">
         <div class="min-w-[420px] px-8 py-7 bg-white rounded">
           <div class="flex">
             <div class="h-[120px] w-[120px] mr-5 bg-fill rounded-full"></div>
@@ -35,18 +36,13 @@
           </div>
         </div>
         <div class="min-w-[420px] px-8 py-7 bg-white rounded">
-          <p>Add Patient</p>
           <div th:replace="~{fragments/new-patient-form :: new-patient-form}"></div>
         </div>
         <div class="min-w-[420px] px-8 py-7 bg-white rounded">
-          <p>Add Dentist</p>
-          </div>
+          <div th:replace="~{fragments/new-dentist-form :: new-dentist-form}"></div>
+        </div>
       </div>
     </main>
-    <footer
-      class="fixed bottom-4 flex justify-center w-full text-xs text-main tracking-widest"
-    >
-      WHITE | Dental Clinic - 2022
-    </footer>
+    <div th:replace="~{fragments/footer :: footer}"></div>
   </body>
 </html>

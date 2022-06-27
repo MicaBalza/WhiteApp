@@ -3,54 +3,44 @@ window.addEventListener('load', function () {
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
-    const formData = {
-      name: document.querySelector('#nombre').value,
-      lastname: document.querySelector('#apellido').value,
-      license: document.querySelector('#matricula').value,
+
+    let data = {
+      name: document.querySelector('#dentist-name').value,
+      lastname: document.querySelector('#dentist-lastname').value,
+      license: document.querySelector('#dentist-license').value
     };
+
     const url = '/dentist/new';
+
     const settings = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(data),
     };
 
     fetch(url, settings)
       .then((response) => response.json())
       .then((data) => {
-      console.log("hola");
-        //Si no hay ningun error se muestra un mensaje diciendo que el odontologo
-        //se agrego bien
-        let successAlert =
-          '<div class="alert alert-success alert-dismissible">' +
-          '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-          '<strong></strong> Odontologo agregado </div>';
+        let successAlert ='<div>Dentist added !</div>';
 
-        document.querySelector('#response').innerHTML = successAlert;
-        document.querySelector('#response').style.display = 'block';
+        document.querySelector('#dentist-response').innerHTML = successAlert;
+        document.querySelector('#dentist-response').style.display = 'block';
         resetUploadForm();
       })
       .catch((error) => {
-      console.log("error");
-        //Si hay algun error se muestra un mensaje diciendo que el odontologo
-        //no se pudo guardar y se intente nuevamente
-        let errorAlert =
-          '<div class="alert alert-danger alert-dismissible">' +
-          '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-          '<strong> Error intente nuevamente</strong> </div>';
+      console.log(error);
+        let errorAlert = '<div>Error, please try again</div>';
 
-        document.querySelector('#response').innerHTML = errorAlert;
-        document.querySelector('#response').style.display = 'block';
-        //se dejan todos los campos vacíos por si se quiere ingresar otro odontologo
-        // resetUploadForm();
+        document.querySelector('#dentist-response').innerHTML = errorAlert;
+        document.querySelector('#dentist-response').style.display = 'block';
       });
   });
 
   function resetUploadForm() {
-    document.querySelector('#nombre').value = '';
-    document.querySelector('#apellido').value = '';
-    document.querySelector('#matricula').value = '';
+    document.querySelector('#dentist-name').value = '';
+    document.querySelector('#dentist-lastname').value = '';
+    document.querySelector('#dentist-license').value = '';
   }
 });
