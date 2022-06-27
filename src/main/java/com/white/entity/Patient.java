@@ -15,7 +15,6 @@ public class Patient extends User {
 
     private String dni;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "addressId", referencedColumnName = "id")
     private Address address;
 
     public Patient(String email, String password, String name, String lastname, Timestamp creationDate, String dni, Address address) {

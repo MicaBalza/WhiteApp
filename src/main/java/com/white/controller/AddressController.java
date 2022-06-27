@@ -1,16 +1,14 @@
 package com.white.controller;
 
 import com.white.entity.Address;
-import com.white.entity.Patient;
 import com.white.service.AddressService;
-import com.white.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/address")
+@RequestMapping("/addresses")
 public class AddressController {
 
     private final AddressService addressService;

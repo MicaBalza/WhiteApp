@@ -23,7 +23,7 @@ public class DentistServiceImpl implements DentistService {
 
     @Override
     public Dentist getDentist(Integer id) {
-        return dentistRepository.getReferenceById(id);
+        return dentistRepository.findById(id).get();
     }
 
     @Override

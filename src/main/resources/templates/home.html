@@ -11,6 +11,7 @@
     </script>
     <script type="text/javascript" th:src="@{js/addPatient.js}"></script>
     <script type="text/javascript" th:src="@{js/addDentist.js}"></script>
+    <script type="text/javascript" th:src="@{js/listPatients.js}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,6 +41,9 @@
         </div>
         <div class="min-w-[420px] px-8 py-7 bg-white rounded">
           <div th:replace="~{fragments/new-dentist-form :: new-dentist-form}"></div>
+        </div>
+        <div class="min-w-[420px] px-8 py-7 bg-white rounded">
+          <div id="patient-list" class="flex flex-col"></div>
         </div>
       </div>
     </main>

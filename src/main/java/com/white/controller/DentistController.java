@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/dentists")
 public class DentistController {
@@ -18,10 +20,9 @@ public class DentistController {
         this.dentistService = dentistService;
     }
 
-    @PostMapping("/new")
-    public ResponseEntity<Dentist> addDentist(@RequestBody Dentist dentist) {
-        dentistService.saveDentist(dentist);
-        return new ResponseEntity(dentist, HttpStatus.CREATED);
+    @GetMapping
+    public List<Dentist> getAllDentists() {
+        return dentistService.getAllDentists();
     }
 
     @GetMapping("/{id}")
@@ -36,5 +37,20 @@ public class DentistController {
         return response;
     }
 
+    @PostMapping("/new")
+    public ResponseEntity<Dentist> addDentist(@RequestBody Dentist dentist) {
+        dentistService.saveDentist(dentist);
+        return new ResponseEntity(dentist, HttpStatus.CREATED);
+    }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Dentist> deleteDentistById(@PathVariable("id") Integer id) {
+        Dentist dentist = dentistService.getDentist(id);
+        if (dentist != null) {
+            dentistService.deleteDentist(id);
+            return new ResponseEntity(dentist, HttpStatus.OK);
+        } else {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+    }
 }

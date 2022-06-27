@@ -35,5 +35,4 @@ public class UserController {
         userService.saveUser(user);
         return new ResponseEntity(user, HttpStatus.CREATED);
     }
-
 }
