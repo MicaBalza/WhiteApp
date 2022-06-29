@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 @Setter
 @Entity
 @Table
-@DiscriminatorValue("Dentist")
+//@DiscriminatorValue("Dentist")
 public class Dentist extends User {
 
     private String license;

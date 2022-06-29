@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @Setter
 @Entity
 @Table
-@DiscriminatorValue("Patient")
+//@DiscriminatorValue("Patient")
 public class Patient extends User {
 
     private String dni;
