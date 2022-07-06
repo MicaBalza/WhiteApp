@@ -21,8 +21,9 @@
   </head>
   <body class="flex flex-col min-h-[100vh] bg-fill">
     <nav th:replace="~{fragments/navbar :: navbar}"></nav>
-    <main class="flex-1 px-9 py-8">
-      <div class="flex flex-wrap gap-4">
+    <main class="grow flex">
+      <div th:replace="~{fragments/sidebar :: sidebar}"></div>
+      <div class="flex flex-wrap px-9 py-8">
         <div class="min-w-[420px] px-8 py-7 bg-white rounded">
           <div class="flex">
             <div class="h-[120px] w-[120px] mr-5 bg-fill rounded-full"></div>
