@@ -3,10 +3,9 @@ package com.white.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,6 +15,9 @@ import java.sql.Timestamp;
 public class Dentist extends User {
 
     private String license;
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<Appointment> appointmentsList;
 
     public Dentist(String email, String password, String name, String lastname, Timestamp creationDate, String license) {
         super(email, password, name, lastname, creationDate);

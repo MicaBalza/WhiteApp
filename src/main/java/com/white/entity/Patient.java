@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,8 +15,12 @@ import java.sql.Timestamp;
 public class Patient extends User {
 
     private String dni;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<Appointment> appointmentsList;
 
     public Patient(String email, String password, String name, String lastname, Timestamp creationDate, String dni, Address address) {
         super(email, password, name, lastname, creationDate);
