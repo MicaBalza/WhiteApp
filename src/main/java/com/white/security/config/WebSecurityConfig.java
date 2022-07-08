@@ -19,6 +19,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private static final String[] ALLOWED_MATCHERS = {"/auth", "/index", "/js/**", "/img/**", "/home"};
+
     @Autowired
     private AppUserService userService;
 
@@ -31,9 +33,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     // ACA HAGO MAS COSAS CON LOS ROLES
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .authorizeRequests().antMatchers("/auth", "/patients/**").permitAll()
+        http.csrf().disable().authorizeRequests()
+                .antMatchers(ALLOWED_MATCHERS).permitAll()
+                .antMatchers( "/dentists/**").hasAnyRole("ADMIN", "USER")
+                .antMatchers( "/patients/**").hasRole("USER")
                 .anyRequest().authenticated()
+                //.and().formLogin().loginPage("/index").loginProcessingUrl("/index").defaultSuccessUrl("/home", true)
                 //.and().csrf().ignoringAntMatchers("/h2-console/**")
                 //.and().headers().frameOptions().sameOrigin()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
