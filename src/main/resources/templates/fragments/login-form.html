@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<div
+        class="absolute grid place-content-center w-full h-full bg-main/75 z-10" th:fragment="login-form"
+>
+    <div class="w-[400px] h-[400px] bg-white">
+        <form th:action="@{/login.html}" method="post" id="login-form">
+            <label for="username">Username</label>:
+            <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
+            <label for="password">Password</label>:
+            <input type="password" id="password" name="password" /> <br />
+            <input type="submit" value="Log in" />
+            <p th:if="${loginError}" class="error">Wrong user or password</p>
+        </form>
+    </div>
+</div>
+</html>

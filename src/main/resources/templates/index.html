@@ -9,6 +9,7 @@
     <script type="tailwind-config">
       window.tailwindConfig
     </script>
+    <script type="text/javascript" th:src="@{js/login.js}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +17,8 @@
       rel="stylesheet"
     />
   </head>
-  <body class="flex flex-col min-h-[100vh] bg-fill">
+  <body class="relative flex flex-col min-h-[100vh] bg-fill">
+  <div th:replace="~{fragments/login-form :: login-form}"></div>
     <nav th:replace="~{fragments/navbar :: navbar}"></nav>
     <main class="flex-1 pb-20">
       <div class="relative w-full h-[400px] mt-[120px] bg-white">
